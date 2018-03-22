@@ -17,7 +17,7 @@ var controls = new THREE.OrbitControls( camera );
 
 /* Create a sample cube */
 var geometry = new THREE.PlaneGeometry(1, 1, 300, 300);
-var texture = new THREE.TextureLoader().load('unwrap.png');
+var texture = new THREE.TextureLoader().load('blattunterseite.png');
 var material = new THREE.MeshStandardMaterial({
 	map: texture,
 	displacementMap: texture,
