@@ -8,10 +8,12 @@ document.body.appendChild(renderer.domElement);
 var scene = new THREE.Scene();
 
 var settings = {
-	displacementScale: 0.2
+	displacementScale: 0.2,
+  rotationSpeed: 0.0
 }
 
 var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.001, 10000);
+
 
 var controls = new THREE.OrbitControls( camera );
 
@@ -37,6 +39,8 @@ scene.add( light2 );
 camera.position.set(0, 2, 2);
 controls.update();
 
+var rotSpeed = 0.001;
+
 
 function initGui() {
 	var gui = new dat.GUI();
@@ -44,12 +48,21 @@ function initGui() {
 	gui.add(settings, "displacementScale").min(0).max(1).onChange(function(val) {
 		material.displacementScale = val;
 	});
+  gui.add(settings, "rotationSpeed").min(0.00).max(0.05).onChange(function(val) {
+    rotSpeed = val;
+  });
 }
+camera.position.x = 0.1329388466632482;
+camera.position.y = -1.4775537828015028;
+camera.position.z = 0.9807223919202779;
+camera.rotation.x = 1.0406578721223902;
+camera.rotation.y = 0.02661888571859346;
+camera.rotation.z = -0.04538019542812724;
 
 function animate() {
 	requestAnimationFrame(animate);
 
-  cube.rotation.z += 0.005;
+  cube.rotation.z += settings["rotationSpeed"];
 	controls.update();
 	renderer.render(scene, camera);
 }
