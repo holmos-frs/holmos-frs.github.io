@@ -19,6 +19,7 @@ var controls = new THREE.OrbitControls( camera );
 var geometry = new THREE.PlaneGeometry(1, 1, 300, 300);
 var texture = new THREE.TextureLoader().load('blattunterseite.png');
 var material = new THREE.MeshStandardMaterial({
+  color: 0xffffff,
 	map: texture,
 	displacementMap: texture,
 	displacementScale: settings.displacementScale,
@@ -29,6 +30,9 @@ scene.add( cube );
 
 var light = new THREE.AmbientLight(0xffffff, 1);
 scene.add( light );
+
+var light2 = new THREE.HemisphereLight(0xffffbb, 0x080820, 2);
+scene.add( light2 );
 
 camera.position.set(0, 2, 2);
 controls.update();
@@ -45,6 +49,7 @@ function initGui() {
 function animate() {
 	requestAnimationFrame(animate);
 
+  cube.rotation.z += 0.005;
 	controls.update();
 	renderer.render(scene, camera);
 }
