@@ -2,7 +2,7 @@
 <h2>Auswertung</h2>
 <p>
 	
-  <b>Verstetigtes Bild aus Rohbild erhalten:</b><br>Die Datei 'einfache-auswertung.py' starten, im Fourierraum Mittelpunktskoordinaten so 	wie Radien des Satelliten finden und dann Wert  durch Konsolenabfrage eingeben.Bild wird als "unwrapped_phase.png" gespeichert, zum 			ändern des Speichernames in einfache-auswertung.py Zeile 78 Namen des Bildes ändern.
+  <b>Verstetigtes Bild aus Rohbild erhalten:</b><br>Die Datei 'einfache-auswertung.py' starten, Rohbilddateipfad eingeben, im Fourierraum Mittelpunktskoordinaten so 	wie Radien des Satelliten finden und dann Wert  durch Konsolenabfrage eingeben.Bild wird als "unwrapped_phase.png" gespeichert, zum 			ändern des Speichernames in einfache-auswertung.py Zeile 78 Namen des Bildes ändern.
 </p>
 <h2>Webview</h2>
 <p> 
